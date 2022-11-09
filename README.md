@@ -1,6 +1,7 @@
 # ARM-Assembly-Code
 First approaches
 We are going to create our first eclipse project, which will assemble and link a program written in assembly language and we will test and debug it on the Raspberry Pi board. The goal is to create an assembly program equivalent to the following C code:
+
 int X = 3;
 int Y = 10;
 int Z;
@@ -49,7 +50,9 @@ SECTIONS
 }
 
 We must remember to select the memmap file as the link script and check that the project compiles and links without errors.
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Second part:
 
 The source code file of the new project must have an assembly implementation of the following program, which calculates for an array A the maximum value and its position, as well as the sum of its elements:
