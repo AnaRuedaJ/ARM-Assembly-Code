@@ -30,14 +30,14 @@ L1:     ldr r0, X
 
 
 */
-         .global start
-        .equ N,8
-        .data
+         	.global start
+        	.equ N,8
+        	.data
 A: 		.word 7,3, 25, 4, 75, 2, 1, 1
 		.bss
 max: 		.space 4
-imax:	    .space 4
-sum:        .space 4
+imax:	    	.space 4
+sum:        	.space 4
 		.text
 start:
 		ldr r0,=A       	 // r0 = dirección de A
@@ -47,7 +47,7 @@ start:
 		mov r4, r2     // sum = A[0]
 
 		mov r5,#1 // int i=1 ....R5=i
-LO:     cmp r5,#N //i>N
+LO:    	 	cmp r5,#N //i>N
 		bge L1  //saltamos y salimos del bucle
 
 		ldr r6,[r0,r5,lsl#2] //R6 => A[i]
@@ -64,12 +64,12 @@ LO:     cmp r5,#N //i>N
 		ldr r6, [r6] //cargamos valor de A[i]
 		str r6,[r3]  //guardamos valor de A[i] en dirrecion de max
 		b LO
-L2:   	add r4, r4,#1
+L2:   		add r4, r4,#1
 		ldr r0, =sum
 		str r4, [r0]
 		ldr r0, =imax
 		str r1, [r0]
 		ldr r0, =max
 		str r3, [r0]
-L1: 	b .
+L1: 	      b .
 		.end
